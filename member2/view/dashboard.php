@@ -26,12 +26,10 @@ $result = $db->getAllArticles($connection,"articles");
 <?php 
 
 while($row = $result->fetch_assoc()){
-
     $id = $row["id"];
     $title = $row["title"];
     $status = $row["status"];
     $views = $row["view_count"];
-
     echo " <tr>
     <td>$id</td>
     <td>$title</td>
