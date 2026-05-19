@@ -1,0 +1,11 @@
+RewriteEngine On
+RewriteBase /blog-platform/
+
+# Allow direct access to files that actually exist
+# (CSS, JS, uploaded images, etc.)
+RewriteCond %{REQUEST_FILENAME} -f [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^ - [L]
+
+# Send everything else through index.php
+RewriteRule ^ index.php [L]
